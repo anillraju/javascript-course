@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>JQuery Tutorial Rajesh Patkar Institute</title>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+       <style>
+           .hi-para {
+                text-align: center;
+                color: rgb(184, 144, 144);
+           }
+       </style>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+       <p class=hi-para>hi</p>
+       <p class=hi-para>hi1</p>
+       <p class=hi-para>hi2</p>
+       <p class=hi-para>hi3</p>
+
+       <script>
+        //    $(document).ready(() => {
+        //        alert("page is ready");
+        //    })
+            $(function(){
+                var elet = document.getElementsByClassName("hi-para");
+                for(var i)
+            })
+           $(".hi-para").on("mouseover", function(event){
+               this.innerHTML = "bye";
+           })
+            
+           $(".hi-para").on("mouseleave", function(event){
+               this.innerHTML = "hi";
+           })
+       </script>
+   </body>
+</html>

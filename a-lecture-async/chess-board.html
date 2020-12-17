@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Table</title>
+    <style>
+        table {
+            background-color: lavenderblush;
+            border-style: solid;
+            border-width: 0.2em;
+        }
+
+        td {
+            background-color: rosybrown;
+            width: 4em;
+            height: 4em;
+            text-align: center;
+        }
+
+        td.displayrow {
+            background-color: inherit;
+            width: 1em;
+            height: 4em;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function nextChar(c) {
+            return String.fromCharCode(c.charCodeAt(0) + 1);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Table</h2>
+    <table id="table1">
+        <thead id="thead1">
+            <script>
+                var th = document.createElement("TH");
+                document.getElementById("thead1").appendChild(th);
+                for (var colname = 'a'; colname <= 'h'; colname = nextChar(colname)) {
+                    th = document.createElement("TH");
+                    document.getElementById("thead1").appendChild(th);
+                    th.innerHTML = colname;
+
+                }
+                th = document.createElement("TH");
+                document.getElementById("thead1").appendChild(th);
+            </script>
+        </thead>
+        <script>
+            var data = "";
+            for (var row = 8; row >= 1; row--) {
+                var tr = document.createElement("TR");
+                document.getElementById("table1").appendChild(tr);
+                tr.id = "tr" + row;
+                var td = document.createElement("TD");
+                tr.appendChild(td);
+                td.innerHTML = row;
+                td.className = "displayrow";
+                for (var file = 'a'; file <= 'h'; file = nextChar(file)) {
+                    td = document.createElement("TD");
+                    tr.appendChild(td);
+                }
+                td = document.createElement("TD");
+                tr.appendChild(td);
+                td.innerHTML = row;
+                td.className = "displayrow";
+            }
+        </script>
+        <tr id="thead2">
+            <script>
+                var th = document.createElement("TH");
+                document.getElementById("thead2").appendChild(th);
+                for (var colname = 'a'; colname <= 'h'; colname = nextChar(colname)) {
+                    th = document.createElement("TH");
+                    document.getElementById("thead2").appendChild(th);
+                    th.innerHTML = colname;
+
+                }
+                th = document.createElement("TH");
+                document.getElementById("thead2").appendChild(th);
+            </script>
+        </tr>
+    </table>
+</body>
+
+</html>

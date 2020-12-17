@@ -1,0 +1,63 @@
+<html>
+
+<head> </head>
+
+<body>
+    <h1> async function </h1>
+    <div id="div1" style="background-color:burlywood;  padding: 6%;">
+        <div id="div2" style="background-color: blueviolet; padding: 5%;">
+            <div id="div3" style="background-color: darkgreen; padding: 4%;">
+                <p id="paraId" style="background-color:chocolate;  padding: 2%;">
+                    Text before clicking
+                </p>
+            </div>
+        </div>
+    </div>
+    <button onclick="f1()"> Click Me </button>
+
+    <script>
+        var padding = [6, 5, 4, 2];
+        var color = ["chocolate", "blueviolet", "burlywood", "darkgreen"];
+
+        var counter = 0;
+        
+
+        function f1() {
+            var para = document.getElementById("paraId");
+            para.innerHTML = "Text after clicking";
+            console.log("in f1");
+            console.log("Current Element " + event.currentTarget.id);
+            console.log("Target " + event.target.id);
+            console.log("Event Phase " + event.eventPhase);
+            console.log("Bubble Status " + event.bubbles);
+            console.log("Cancelable Status " + event.cancelable);
+            event.preventDefault();
+        }
+
+        function f2() {
+            var div = document.getElementById(event.currentTarget.id);
+            div.style = "background-color:" + color[counter++ % (color.length-1)] + "; padding:" + padding[counter % (color.length-1)] + "%;";
+            console.log("in f2");
+            console.log("Current Element " + event.currentTarget.id);
+            console.log("Target " + event.target.id);
+            console.log("Event Phase " + event.eventPhase);
+            console.log("Bubble Status " + event.bubbles);
+            console.log("Cancelable Status " + event.cancelable);
+
+        }
+        document.getElementById("div1").addEventListener("click", f2, true);
+        document.getElementById("div2").addEventListener("click", f2, true);
+        document.getElementById("div3").addEventListener("click", f2, true);
+
+        document.getElementById("paraId").addEventListener("click", f2, true);
+
+        document.getElementById("div1").addEventListener("click", f2, false);
+        document.getElementById("div2").addEventListener("click", f2, false);
+        document.getElementById("div3").addEventListener("click", f2, false);
+
+        document.getElementById("paraId").addEventListener("click", f2, false);
+    </script>
+
+</body>
+
+</html>
