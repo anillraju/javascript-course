@@ -18,7 +18,7 @@ app.get("/jsonendpoint/:index", function(req, res){
     click++;
     console.log(click);
     console.log("index of request: "+req.params.index);
-    res.send(JSON.stringify({"click" : click, y : 2}));
+    res.send(JSON.stringify({"click" : click, "requestIndex" : req.params.index}));
 })
 
 app.use(express.static("public"));
