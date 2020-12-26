@@ -1,0 +1,5 @@
+Welcome to structured programming!
+Welcome to if compound statement
+value of i is less than 10 8
+value of j is not equal to 3 5
+Bye

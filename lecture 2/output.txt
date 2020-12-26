@@ -1,0 +1,5 @@
+Welcome to structured programming!
+Welcome to if compound statement
+I am inside if
+I am still inside if
+object
